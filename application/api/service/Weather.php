@@ -35,7 +35,7 @@ class Weather
                 $arr = [];
                 $arr[] = $node->findOne("h1")->innertext;
                 $arr[] = $node->findOne("p.wea")->innertext;
-                $arr[] = $node->findOne("p.tem>span")->innertext;
+                $arr[] = $node->findOne("p.tem>span")->innertext."/".$node->findOne("p.tem>i")->innertext;
                 $result['day'.$i] = $arr;
                 $i++;
             }
